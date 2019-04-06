@@ -16,7 +16,7 @@ module.exports = {
         sitemap: 'https://www.coreydeon.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
-    }
+    },
     `gatsby-plugin-sitemap`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
