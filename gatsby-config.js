@@ -9,6 +9,14 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.coreydeon.com',
+        sitemap: 'https://www.coreydeon.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
     `gatsby-plugin-sitemap`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
