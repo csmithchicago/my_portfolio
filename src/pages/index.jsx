@@ -152,9 +152,9 @@ const Index = () => (
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>. Made by{' '}
-          <a href="https://www.lekoarts.de">LekoArts</a>.
+          &copy; 2019 by Corey Smith.{' '}
+          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Gatsby Starter</a>. Made with{' '}
+          <a href="https://www.gatsbyjs.org/">GatsbyJS</a>.
         </Footer>
       </Contact>
     </Parallax>
