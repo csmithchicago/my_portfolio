@@ -6,6 +6,7 @@ import { Parallax } from 'react-spring/renderprops-addons.cjs'
 // Components
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
+import PublicationCard from '../components/PublicationCard'
 
 // Elements
 import Inner from '../elements/Inner'
@@ -60,70 +61,94 @@ const Footer = styled.footer`
 const Index = () => (
   <>
     <Layout />
-    <Parallax pages={5}>
+    <Parallax pages={6}>
       <Hero offset={0}>
         <BigTitle>
-          Hello, <br /> I'm John Doe.
+          hi, <br /> i'm corey smith.
         </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+        <Subtitle>i am a phd student in chicago working on building my programing skills.</Subtitle>
       </Hero>
       <Projects offset={1}>
         <Title>Projects</Title>
         <ProjectsWrapper>
           <ProjectCard
-            title="Freiheit"
-            link="https://www.behance.net/gallery/58937147/Freiheit"
+            title="my weight loss tracker"
+            link="https://github.com/csmithchicago/weightlosstracker"
             bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
           >
-            This project is my entry to Adobe's #ChallengeYourPerspective contest.
+            this is a project that i created that can help people keep track of their weight loss progress.
           </ProjectCard>
           <ProjectCard
-            title="Harry Potter"
-            link="https://www.behance.net/gallery/52915793/Harry-Potter"
+            title="this portfolio"
+            link="https://coreydeon.com"
             bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
           >
-            I entered the DOCMA 2017 award with this Harry Potter inspired image.
+            i started this site to have an easy way to summarize and show off the different skills and tools i use.
           </ProjectCard>
           <ProjectCard
-            title="Tomb Raider"
-            link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+            title="Loseit Challenge Analysis"
+            link="https://github.com/csmithchicago/Loseit"
             bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
           >
-            Recreation of a Tomb Raider Wallpaper (Fan Art)
+            analysis that i performed for reddit weight loss challenges.
           </ProjectCard>
           <ProjectCard
-            title="Eagle"
-            link="https://www.behance.net/gallery/38068151/Eagle"
+            title="2018 Midterm Election"
+            link="https://github.com/csmithchicago/DFP_WTHH_Data"
             bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
           >
-            A fantasy image manipulation relocating the habitat of wild animals.
+            election analysis using survey data acquired by data for progress.
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <About offset={3}>
+      <Projects offset={2}>
+        <Title>Publications</Title>
+        <ProjectsWrapper>
+          <PublicationCard
+            title="Reflective imaging improves spatiotemporal resolution and collection efficiency in light sheet microscopy"
+            link="https://www.ncbi.nlm.nih.gov/pubmed/29129912"
+            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+          >
+          </PublicationCard>
+          <PublicationCard
+            title="Sensitivity evaluation and selective plane imaging geometry for x-ray-induced luminescence imaging"
+            link="https://www.ncbi.nlm.nih.gov/pubmed/28703922"
+            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+          >
+          </PublicationCard>
+          <PublicationCard
+            title="Simultaneous multiview capture and fusion improves spatial resolution in wide-field and light-sheet microscopy"
+            link="https://www.ncbi.nlm.nih.gov/pubmed/27761486"
+            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+          >
+          </PublicationCard>
+        </ProjectsWrapper>
+      </Projects>
+
+      <About offset={4}>
         <Title>About</Title>
         <AboutHero>
-          <Avatar src={avatar} alt="John Doe" />
+          <Avatar src={avatar} alt="Corey Smith" />
           <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+            {/* The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
+            Emoji into my speech to better express myself. Winky face. */}
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
+          {/* You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
           every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
           make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
           want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
+          right? */}
         </AboutDesc>
       </About>
-      <Contact offset={4}>
+      <Contact offset={5}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
+            {/* Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
             <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a> */}
           </ContactText>
         </Inner>
         <Footer>

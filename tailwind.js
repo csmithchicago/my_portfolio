@@ -195,6 +195,7 @@ module.exports = {
 
   fonts: {
     sans: [
+      'Fira Sans',
       'Open Sans',
       '-apple-system',
       'BlinkMacSystemFont',
@@ -203,7 +204,6 @@ module.exports = {
       'Oxygen',
       'Ubuntu',
       'Cantarell',
-      'Fira Sans',
       'Droid Sans',
       'Helvetica Neue',
       'sans-serif',
