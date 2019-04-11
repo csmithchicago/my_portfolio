@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { rotateAnimation } from '../styles/animations'
 import triangle from '../images/triangle.svg'
+import blackstar from '../images/Star.svg'
 
 export const Title = styled.h1`
   ${tw`text-4xl lg:text-4xl font-sans text-white mb-8 tracking-wide relative inline-block`};
@@ -10,7 +11,7 @@ export const Title = styled.h1`
     content: '';
     width: 40px;
     height: 40px;
-    background: url(${triangle});
+    background: url(${blackstar});
     position: absolute;
     background-size: 40px;
     ${rotateAnimation('4s')};
