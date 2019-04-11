@@ -1,13 +1,15 @@
 {
-  "name": "gatsby-starter-portfolio-cara",
-  "description": "Playful & Colorful One-Page website with Parallax effect powered by react-spring, TailwindCSS.",
-  "version": "3.0.0",
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "name": "Corey-Smith-Portfolio",
+  "description": "My personal portfolio featuring different projects I have worked on.",
+  "version": "1.0.0",
+  "author": "CoreySmith (https://www.coreydeon.com)",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "dotenv": "^7.0.0",
+    "fs": "0.0.1-security",
     "gatsby": "^2.3.4",
-    "gatsby-image": "^2.0.35",
+    "gatsby-image": "^2.0.37",
     "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-netlify": "^2.0.13",
@@ -17,7 +19,11 @@
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-sitemap": "^2.0.11",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-remark-images": "^3.0.10",
+    "gatsby-remark-images-contentful": "^2.0.10",
+    "gatsby-source-contentful": "^2.0.45",
     "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -31,8 +37,6 @@
     "typeface-open-sans": "^0.0.54"
   },
   "keywords": [
-    "gatsby",
-    "starter",
     "portfolio"
   ],
   "scripts": {
@@ -55,11 +59,11 @@
     "prettier": "^1.16.4"
   },
   "repository": {
-    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara",
+    "url": "https://github.com/csmithchicago/my_portfolio",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara/issues"
+    "url": "https://github.com/csmithchicago/my_portfolio/issues"
   },
-  "homepage": "https://cara.lekoarts.de"
+  "homepage": "https://www.coreydeon.com"
 }

@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
+// import Image from 'gatsby-image'
 
 // Components
 import Layout from '../components/Layout'
@@ -33,6 +35,9 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
+// const StyledAvatar = styled(GatsbyImage)`
+// ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
+// `
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
@@ -61,7 +66,7 @@ const Footer = styled.footer`
 const Index = () => (
   <>
     <Layout />
-    <Parallax pages={6}>
+    <Parallax pages={7}>
       <Hero offset={0}>
         <BigTitle>
           hi, <br /> i'm corey smith.
@@ -101,7 +106,7 @@ const Index = () => (
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <Projects offset={2}>
+      <Projects offset={3}>
         <Title>Publications</Title>
         <ProjectsWrapper>
           <PublicationCard
@@ -125,36 +130,35 @@ const Index = () => (
         </ProjectsWrapper>
       </Projects>
 
-      <About offset={4}>
+      <About offset={5}>
         <Title>About</Title>
         <AboutHero>
           <Avatar src={avatar} alt="Corey Smith" />
           <AboutSub>
-            {/* The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face. */}
+            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
+            Emoji into my speech to better express myself. Winky face.
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          {/* You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
+          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
           every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
           make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
           want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right? */}
+          right?
         </AboutDesc>
       </About>
-      <Contact offset={5}>
+      <Contact offset={6}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            {/* Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a> */}
+          <Link to="/blog">Check Out My Blog!</Link>
           </ContactText>
         </Inner>
         <Footer>
           &copy; 2019 by Corey Smith.{' '}
           <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Gatsby Starter</a>. Made with{' '}
           <a href="https://www.gatsbyjs.org/">GatsbyJS</a>.
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
         </Footer>
       </Contact>
     </Parallax>
