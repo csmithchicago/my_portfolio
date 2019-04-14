@@ -7,6 +7,7 @@ module.exports = {
   /* General Information */
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    title: 'Corey Smith - Portfolio',
   },
   /* Plugins */
   plugins: [
@@ -33,6 +34,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images/`,
         name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
     {
@@ -78,7 +86,7 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 590,
+              maxWidth: 2048,
             },
           },
         ],
@@ -90,8 +98,19 @@ module.exports = {
         // It's important to specify the maxWidth (in pixels) of
         // the content container as this plugin uses this as the
         // base for generating different widths of each image.
-        maxWidth: 590,
+        maxWidth: 2048,
       },
+    },
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        develop: true, // Enable while using `gatsby develop`
+        tailwind: true, // Enable tailwindcss support
+        // whitelist: ['whitelist'], // Don't remove this selector
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      }
     },
     /* Must be placed at the end */
     'gatsby-plugin-offline',
