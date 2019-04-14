@@ -22,6 +22,19 @@ const wave = keyframes`
   }
 `
 
+const myWave = keyframes`
+  0% {
+    d: path("M 0 200 Q 250 50 400 200 Q 550 350 800 200 L 800 0 L 0 0 L 0 200 ");
+  }
+  50% {
+    d: path("M 0 200 Q 200 150 400 200 Q 600 250 800 200 L 800 0 L 0 0 L 0 200 ");
+  }
+  100% {
+    d: path("M 0 200 Q 150 350 400 200 Q 650 50 800 200 L 800 0 L 0 0 L 0 200");
+  }
+`
+
+
 const upDown = keyframes`
   from {
     transform: translateY(0);
@@ -60,6 +73,9 @@ export const UpDownWide = styled.div`
 
 export const waveAnimation = length => css`
   animation: ${wave} ${length} linear infinite alternate;
+`
+export const myWaveAnimation = length => css`
+  animation: ${myWave} ${length} linear infinite alternate;
 `
 
 export const rotateAnimation = length => css`

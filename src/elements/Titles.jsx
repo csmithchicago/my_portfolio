@@ -11,7 +11,7 @@ export const Title = styled.h1`
     content: '';
     width: 40px;
     height: 40px;
-    background: url(${blackstar});
+    background: url(${triangle});
     position: absolute;
     background-size: 40px;
     ${rotateAnimation('4s')};

@@ -1,9 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import { Link, graphql } from 'gatsby'
+import styled, { css } from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
-// import Image from 'gatsby-image'
+import Img from 'gatsby-image'
+import get from 'lodash/get'
+
+// Animations
+import { rotateAnimation } from '../styles/animations'
 
 // Components
 import Layout from '../components/Layout'
@@ -20,7 +24,8 @@ import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
 
-import avatar from '../images/avatar.jpg'
+import contentfulLogo from '../images/PoweredByContentful_DarkBackground.svg'
+import gatsbyLogo from '../images/gatsbyjs-ar21.svg'
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -35,6 +40,12 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
+export const Span = styled.span`
+  &:before {
+    content: '';
+    ${rotateAnimation('4s')};
+  }
+`
 // const StyledAvatar = styled(GatsbyImage)`
 // ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
 // `
@@ -43,12 +54,12 @@ const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `
 
-const Avatar = styled.img`
-  ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
+const Avatar = styled(Img)`
+  ${tw`h-auto w-32 xl:w-48 flex-none`};
 `
 
 const AboutSub = styled.span`
-  ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
+  ${tw`flex-auto text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
 `
 
 const AboutDesc = styled.p`
@@ -63,17 +74,42 @@ const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `
 
-const Index = () => (
-  <>
+// const Spinner = styled.animate`
+//   animation: rotate 4s linear infinite;
+// `
+
+// const Index = ({data}) => (
+class HomePage extends React.Component {
+  render() {
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    const [author] = get(this, 'props.data.allContentfulPerson.edges')
+
+    return (
+    <>
     <Layout />
     <Parallax pages={7}>
       <Hero offset={0}>
         <BigTitle>
           hi, <br /> i'm corey smith.
         </BigTitle>
-        <Subtitle>i am a phd student in chicago working on building my programing skills.</Subtitle>
+        <Subtitle>
+          phd candidate <span style={{color: "#e07628"}}>  &#10031;  </span> programmer <span style={{color: "#e07628"}}>  &#10031;  </span> medical physicist
+        </Subtitle>
       </Hero>
-      <Projects offset={1}>
+      <About offset={1}>
+        <Title>About</Title>
+        <AboutHero>
+          <Avatar fluid={author.node.heroImage.fluid} alt="profile picture"/>
+          <AboutSub>
+            {author.node.shortBio.shortBio}  
+          </AboutSub>
+        </AboutHero>
+        <AboutDesc>
+          {/* {author.node.shortBio.shortBio} */}
+        </AboutDesc>
+      </About>
+      <Projects offset={2}>
         <Title>Projects</Title>
         <ProjectsWrapper>
           <ProjectCard
@@ -106,7 +142,7 @@ const Index = () => (
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <Projects offset={3}>
+      <Projects offset={4}>
         <Title>Publications</Title>
         <ProjectsWrapper>
           <PublicationCard
@@ -129,40 +165,74 @@ const Index = () => (
           </PublicationCard>
         </ProjectsWrapper>
       </Projects>
-
-      <About offset={5}>
-        <Title>About</Title>
-        <AboutHero>
-          <Avatar src={avatar} alt="Corey Smith" />
-          <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
-          </AboutSub>
-        </AboutHero>
-        <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-          every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-          make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
-          want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
-        </AboutDesc>
-      </About>
       <Contact offset={6}>
         <Inner>
           <Title>Get in touch</Title>
-          <ContactText>
-          <Link to="/blog">Check Out My Blog!</Link>
+          <ContactText> 
+          <Link to="#">Check Out My Blog!</Link>
+          <br></br>
           </ContactText>
         </Inner>
         <Footer>
+        <p>
+          <a href="https://www.contentful.com/" rel="nofollow" target="_blank">
+            <img src={contentfulLogo}
+            style={{width: "80%"}}
+            alt="Powered by Contentful"/>
+          </a>
+          {/* {'      '}
+          <a href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">
+            <img src={gatsbyLogo}
+            style={{width: "20%"}}
+            alt="Powered by GatsbyJS"/>
+          </a> */}
+          </p>
           &copy; 2019 by Corey Smith.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Gatsby Starter</a>. Made with{' '}
-          <a href="https://www.gatsbyjs.org/">GatsbyJS</a>.
-          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+          {/* <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Gatsby Starter</a>.
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by 
+          <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a> */}
         </Footer>
       </Contact>
     </Parallax>
   </>
-)
+    )
+  }
+}
+export default HomePage
 
-export default Index
+export const query = graphql`
+query IndexQuery {
+  contentfulPerson {
+    name
+    shortBio {
+    shortBio
+    }
+  }
+  contentfulAsset{
+    fluid {
+      src
+    }
+  }
+  allContentfulPerson(filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }) {
+    edges {
+      node {
+        name
+        shortBio {
+          shortBio
+        }
+        title
+        heroImage: image {
+          fluid(
+            maxWidth: 512
+            maxHeight: 512
+          ) {
+            ...GatsbyContentfulFluid_tracedSVG
+            }
+        }
+      }
+    }
+  }
+}
+`
+
+// export default Index

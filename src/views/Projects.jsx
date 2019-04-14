@@ -10,16 +10,17 @@ import SVG from '../components/SVG'
 const Projects = ({ children, offset }) => (
   <>
     <DividerMiddle
-      bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
+      // bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
+      bg= "#161719" // "#23262b"
       speed={-0.2}
       offset={`${offset}.1`}
-      factor={2}
+      factor={1.2}
     />
-    <Content speed={0.4} offset={`${offset}.2`} factor={2}>
+    <Content speed={0.4} offset={`${offset}.2`} factor={1}>
       <Inner>{children}</Inner>
     </Content>
-    <Divider speed={0.1} offset={offset} factor={2}>
-      <UpDown>
+    {/* <Divider speed={0.1} offset={offset} factor={2}> */}
+      {/* <UpDown>
         <SVG icon="box" width={6} fill={colors.white} left="85%" top="75%" />
         <SVG icon="upDown" width={8} fill={colors.teal} left="70%" top="20%" />
         <SVG icon="triangle" width={8} stroke={colors.orange} left="25%" top="5%" />
@@ -38,8 +39,8 @@ const Projects = ({ children, offset }) => (
       <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
       <SVG icon="box" width={12} fill={colors.yellow} left="29%" top="26%" />
       <SVG icon="hexa" width={16} stroke={colors.red} left="75%" top="30%" />
-      <SVG icon="hexa" width={8} stroke={colors.yellow} left="80%" top="70%" />
-    </Divider>
+      <SVG icon="hexa" width={8} stroke={colors.yellow} left="80%" top="70%" /> */}
+    {/* </Divider> */}
   </>
 )
 
