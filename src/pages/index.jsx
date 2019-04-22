@@ -26,6 +26,7 @@ import Contact from '../views/Contact'
 
 import contentfulLogo from '../images/PoweredByContentful_DarkBackground.svg'
 import gatsbyLogo from '../images/gatsbyjs-ar21.svg'
+import styles from '../styles/style.css'
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -46,10 +47,6 @@ export const Span = styled.span`
     ${rotateAnimation('4s')};
   }
 `
-// const StyledAvatar = styled(GatsbyImage)`
-// ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
-// `
-
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `
@@ -59,11 +56,9 @@ const Avatar = styled(Img)`
 `
 
 const AboutSub = styled.span`
-  ${tw`flex-auto text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
-`
-
-const AboutDesc = styled.p`
-  ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
+  ${tw`flex-auto text-white pt-16 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
+  font-family: 'Cormorant Garamond';
+  font-weight: 600;
 `
 
 const ContactText = styled.p`
@@ -73,10 +68,6 @@ const ContactText = styled.p`
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `
-
-// const Spinner = styled.animate`
-//   animation: rotate 4s linear infinite;
-// `
 
 // const Index = ({data}) => (
 class HomePage extends React.Component {
@@ -88,13 +79,13 @@ class HomePage extends React.Component {
     return (
     <>
     <Layout />
-    <Parallax pages={7}>
+    <Parallax pages={4.4}>
       <Hero offset={0}>
         <BigTitle>
-          hi, <br /> i'm corey smith.
+          Hi, <br /> I'm Corey Smith.
         </BigTitle>
         <Subtitle>
-          phd candidate <span style={{color: "#e07628"}}>  &#10031;  </span> programmer <span style={{color: "#e07628"}}>  &#10031;  </span> medical physicist
+          PhD Candidate <span style={{color: "#e07628"}}>  &#10031;  </span> Programmer <span style={{color: "#e07628"}}>  &#10031;  </span> Medical Physicist
         </Subtitle>
       </Hero>
       <About offset={1}>
@@ -105,67 +96,66 @@ class HomePage extends React.Component {
             {author.node.shortBio.shortBio}  
           </AboutSub>
         </AboutHero>
-        <AboutDesc>
-          {/* {author.node.shortBio.shortBio} */}
-        </AboutDesc>
       </About>
       <Projects offset={2}>
         <Title>Projects</Title>
         <ProjectsWrapper>
-          <ProjectCard
-            title="my weight loss tracker"
-            link="https://github.com/csmithchicago/weightlosstracker"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            this is a project that i created that can help people keep track of their weight loss progress.
-          </ProjectCard>
-          <ProjectCard
-            title="this portfolio"
-            link="https://coreydeon.com"
-            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
-          >
-            i started this site to have an easy way to summarize and show off the different skills and tools i use.
-          </ProjectCard>
-          <ProjectCard
-            title="Loseit Challenge Analysis"
+        <ProjectCard
+            title="r/Loseit Challenge Analysis"
             link="https://github.com/csmithchicago/Loseit"
-            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+            bg="#794acf"
           >
-            analysis that i performed for reddit weight loss challenges.
+            {/* Analysis of Past Reddit Weight Loss Challenges */}
           </ProjectCard>
           <ProjectCard
-            title="2018 Midterm Election"
-            link="https://github.com/csmithchicago/DFP_WTHH_Data"
-            bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
+            title="My Weight Loss Tracker"
+            link="https://github.com/csmithchicago/weightlosstracker"
+            bg="#794acf"
           >
-            election analysis using survey data acquired by data for progress.
+            {/* This is an ongoing project I created to help people keep track of their weight loss progress. */}
           </ProjectCard>
-        </ProjectsWrapper>
+          <ProjectCard
+            // title="this portfolio"
+            // link="https://coreydeon.com"
+            // bg="#794acf"
+          >
+            {/* i started this site to have an easy way to summarize and show off the different skills and tools i use. */}
+          </ProjectCard>
+          <ProjectCard
+            // title="2018 Midterm Election"
+            // link="https://github.com/csmithchicago/DFP_WTHH_Data"
+            // bg="#794acf"
+          >
+            {/* election analysis using survey data acquired by data for progress. */}
+          </ProjectCard>
+          <Title>Publications</Title>
+          <ProjectCard></ProjectCard>
+        {/* </ProjectsWrapper>
       </Projects>
       <Projects offset={4}>
         <Title>Publications</Title>
-        <ProjectsWrapper>
+        <ProjectsWrapper> */}
           <PublicationCard
             title="Reflective imaging improves spatiotemporal resolution and collection efficiency in light sheet microscopy"
             link="https://www.ncbi.nlm.nih.gov/pubmed/29129912"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+            bg="#794acf"
           >
           </PublicationCard>
           <PublicationCard
             title="Sensitivity evaluation and selective plane imaging geometry for x-ray-induced luminescence imaging"
             link="https://www.ncbi.nlm.nih.gov/pubmed/28703922"
-            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+            bg="#794acf"
           >
           </PublicationCard>
           <PublicationCard
             title="Simultaneous multiview capture and fusion improves spatial resolution in wide-field and light-sheet microscopy"
             link="https://www.ncbi.nlm.nih.gov/pubmed/27761486"
-            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+            bg='#794acf'
           >
           </PublicationCard>
         </ProjectsWrapper>
       </Projects>
-      <Contact offset={6}>
+      <Contact offset={3.5}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText> 
