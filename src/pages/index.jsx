@@ -101,16 +101,16 @@ class HomePage extends React.Component {
         <Title>Projects</Title>
         <ProjectsWrapper>
         <ProjectCard
-            title="r/Loseit Challenge Analysis"
-            link="https://github.com/csmithchicago/Loseit"
-            bg="#794acf"
+            // title="r/Loseit Challenge Analysis"
+            // link="https://github.com/csmithchicago/Loseit"
+            // bg="#794acf"
           >
             {/* Analysis of Past Reddit Weight Loss Challenges */}
           </ProjectCard>
           <ProjectCard
-            title="My Weight Loss Tracker"
-            link="https://github.com/csmithchicago/weightlosstracker"
-            bg="#794acf"
+            // title="My Weight Loss Tracker"
+            // link="https://github.com/csmithchicago/weightlosstracker"
+            // bg="#794acf"
           >
             {/* This is an ongoing project I created to help people keep track of their weight loss progress. */}
           </ProjectCard>
@@ -159,7 +159,7 @@ class HomePage extends React.Component {
         <Inner>
           <Title>Get in touch</Title>
           <ContactText> 
-          <Link to="#">Check Out My Blog!</Link>
+          <Link to="#">Blog is Coming Soon!</Link>
           <br></br>
           </ContactText>
         </Inner>
