@@ -27,7 +27,7 @@ export const Title = styled.h1`
 export const BigTitle = styled.h1`
   ${tw`text-white mb-6 tracking-wide`};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-size: 9vw;
+  font-size: 10vw;
   white-space: nowrap;
 `
 
@@ -35,7 +35,7 @@ export const Subtitle = styled.p`
   ${tw`text-white mt-8 xxl:w-3/4`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
-  font-size: 3vw;
+  font-size: 4vw;
   font-family: 'Cormorant Garamond';
   font-weight: 700;
   letter-spacing: 1px;

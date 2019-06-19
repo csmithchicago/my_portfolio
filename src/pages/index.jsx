@@ -33,10 +33,10 @@ const ProjectsWrapper = styled.div`
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: repeat(2, 1fr);
-  @media (max-width: 1200px) {
+  @media (max-width: 75em) {
     grid-gap: 3rem;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 56em) {
     grid-template-columns: 1fr;
     grid-gap: 2rem;
   }
@@ -55,7 +55,7 @@ const Avatar = styled(Img)`
   ${tw`h-auto w-32 xl:w-48 flex-none`};
 `
 
-const AboutSub = styled.span`
+const AboutSub = styled.div`
   ${tw`flex-auto text-white pt-16 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
   font-family: 'Cormorant Garamond';
   font-weight: 600;
@@ -79,13 +79,13 @@ class HomePage extends React.Component {
     return (
     <>
     <Layout />
-    <Parallax pages={4.4}>
+    <Parallax pages={4}>
       <Hero offset={0}>
         <BigTitle>
           Hi, <br /> I'm Corey Smith.
         </BigTitle>
         <Subtitle>
-          PhD Candidate <span style={{color: "#e07628"}}>  &#10031;  </span> Programmer <span style={{color: "#e07628"}}>  &#10031;  </span> Medical Physicist
+          Medical Physicist <span style={{color: "#e07628"}}>  &#10031;  </span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
         </Subtitle>
       </Hero>
       <About offset={1}>
@@ -101,61 +101,22 @@ class HomePage extends React.Component {
         <Title>Projects</Title>
         <ProjectsWrapper>
         <ProjectCard
-            // title="r/Loseit Challenge Analysis"
-            // link="https://github.com/csmithchicago/Loseit"
-            // bg="#794acf"
-          >
-            {/* Analysis of Past Reddit Weight Loss Challenges */}
-          </ProjectCard>
-          <ProjectCard
-            // title="My Weight Loss Tracker"
-            // link="https://github.com/csmithchicago/weightlosstracker"
-            // bg="#794acf"
-          >
-            {/* This is an ongoing project I created to help people keep track of their weight loss progress. */}
-          </ProjectCard>
-          <ProjectCard
-            // title="this portfolio"
-            // link="https://coreydeon.com"
-            // bg="#794acf"
-          >
-            {/* i started this site to have an easy way to summarize and show off the different skills and tools i use. */}
-          </ProjectCard>
-          <ProjectCard
-            // title="2018 Midterm Election"
-            // link="https://github.com/csmithchicago/DFP_WTHH_Data"
-            // bg="#794acf"
-          >
-            {/* election analysis using survey data acquired by data for progress. */}
-          </ProjectCard>
-          <Title>Publications</Title>
-          <ProjectCard></ProjectCard>
-        {/* </ProjectsWrapper>
-      </Projects>
-      <Projects offset={4}>
-        <Title>Publications</Title>
-        <ProjectsWrapper> */}
-          <PublicationCard
-            title="Reflective imaging improves spatiotemporal resolution and collection efficiency in light sheet microscopy"
-            link="https://www.ncbi.nlm.nih.gov/pubmed/29129912"
+            title="r/Loseit Challenge Analysis"
+            link="https://github.com/csmithchicago/Loseit"
             bg="#794acf"
           >
-          </PublicationCard>
-          <PublicationCard
-            title="Sensitivity evaluation and selective plane imaging geometry for x-ray-induced luminescence imaging"
-            link="https://www.ncbi.nlm.nih.gov/pubmed/28703922"
+            Analysis of Past Reddit Weight Loss Challenges
+          </ProjectCard>
+          <ProjectCard
+            title="My Weight Loss Tracker"
+            link="https://github.com/csmithchicago/weightlosstracker"
             bg="#794acf"
           >
-          </PublicationCard>
-          <PublicationCard
-            title="Simultaneous multiview capture and fusion improves spatial resolution in wide-field and light-sheet microscopy"
-            link="https://www.ncbi.nlm.nih.gov/pubmed/27761486"
-            bg='#794acf'
-          >
-          </PublicationCard>
+            This is an ongoing project I created to help people keep track of their weight loss progress.
+          </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <Contact offset={3.5}>
+      <Contact offset={3}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText> 
@@ -167,7 +128,7 @@ class HomePage extends React.Component {
         <p>
           <a href="https://www.contentful.com/" rel="nofollow" target="_blank">
             <img src={contentfulLogo}
-            style={{width: "80%"}}
+            style={{width: "40%"}}
             alt="Powered by Contentful"/>
           </a>
           {/* {'      '}

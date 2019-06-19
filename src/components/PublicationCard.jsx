@@ -14,7 +14,7 @@ const Wrapper = styled.a`
 `
 const Title = styled.div`
   ${tw`text-white text-2xl md:text-3xl xl:text-4xl tracking-wide font-sans`};
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2em 10em rgba(0, 0, 0, 0.3);
 `
 const PublicationCard = ({ title, link, bg }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
