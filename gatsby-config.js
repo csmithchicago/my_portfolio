@@ -8,6 +8,28 @@ module.exports = {
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
     title: 'Corey Smith - Portfolio',
+    menuLinks:[
+      {
+        name: 'Home',
+        link: '/'
+      },
+      {
+        name: 'About',
+        link: '/'
+      },
+      {
+        name: 'Projects',
+        link: '/'
+      },
+      {
+        name: 'Blog',
+        link: '/blog'
+      },
+      {
+        name: 'Contact Me',
+        link: '/'
+      }
+    ]
   },
   /* Plugins */
   plugins: [

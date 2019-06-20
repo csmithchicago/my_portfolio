@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql , StaticQuery} from "gatsby";
 
 // Components
-import Layout from '../components/Layout'
+import BlogLayout from '../components/BlogLayout'
 
 const BlogPage = () => (
     <StaticQuery
@@ -31,11 +31,13 @@ const BlogPage = () => (
 
       }) => (
         <>
-          <h1>My New Blog Page</h1>
-          <small>Created on </small>
-          <img src={src} />
-          <p>{shortBio}</p>
-          <Link to="/">Go Home</Link>
+          <BlogLayout>
+            <h1>My New Blog Page</h1>
+            <small>Created on </small>
+            <img src={src} />
+            <p>{shortBio}</p>
+            <Link to="/">Go Home</Link>
+          </BlogLayout>
         </>
       )}
     />
