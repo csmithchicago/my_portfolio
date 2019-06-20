@@ -1,5 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
+const scrollToElement = require('scroll-to-element')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -8,18 +9,17 @@ exports.createPages = ({ graphql, actions }) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
     resolve(
       graphql(
-        `
-          {
-            allContentfulBlogPost {
-              edges {
-                node {
-                  title
-                  slug
-                }
+        `query{
+          allContentfulBlogPost {
+            edges {
+              node {
+                title
+                slug
               }
             }
           }
-          `
+        }
+        `
       ).then(result => {
         if (result.errors) {
           console.log(result.errors)

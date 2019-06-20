@@ -72,9 +72,8 @@ const Footer = styled.footer`
 // const Index = ({data}) => (
 class HomePage extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
+    const bio = author.node.shortBio
 
     return (
     <>
@@ -92,13 +91,14 @@ class HomePage extends React.Component {
         <Title>About</Title>
         <AboutHero>
           <Avatar fluid={author.node.heroImage.fluid} alt="profile picture"/>
-          <AboutSub>
-            {author.node.shortBio.shortBio}  
+          <AboutSub dangerouslySetInnerHTML={{
+            __html: bio.childMarkdownRemark.html }}>
+            {/* {author.node.shortBio.shortBio}   */}
           </AboutSub>
         </AboutHero>
       </About>
       <Projects offset={2}>
-        <Title>Projects</Title>
+        <Title name="#projects" >Projects</Title>
         <ProjectsWrapper>
         <ProjectCard
             title="r/Loseit Challenge Analysis"
@@ -131,17 +131,14 @@ class HomePage extends React.Component {
             style={{width: "40%"}}
             alt="Powered by Contentful"/>
           </a>
-          {/* {'      '}
+          {'      '}
           <a href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">
             <img src={gatsbyLogo}
             style={{width: "20%"}}
             alt="Powered by GatsbyJS"/>
-          </a> */}
+          </a>
           </p>
           &copy; 2019 by Corey Smith.{' '}
-          {/* <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Gatsby Starter</a>.
-          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by 
-          <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a> */}
         </Footer>
       </Contact>
     </Parallax>
@@ -153,23 +150,15 @@ export default HomePage
 
 export const query = graphql`
 query IndexQuery {
-  contentfulPerson {
-    name
-    shortBio {
-    shortBio
-    }
-  }
-  contentfulAsset{
-    fluid {
-      src
-    }
-  }
   allContentfulPerson(filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }) {
     edges {
       node {
         name
         shortBio {
           shortBio
+          childMarkdownRemark {
+            html
+          }
         }
         title
         heroImage: image {
@@ -185,5 +174,3 @@ query IndexQuery {
   }
 }
 `
-
-// export default Index

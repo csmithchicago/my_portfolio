@@ -11,24 +11,29 @@ module.exports = {
     menuLinks:[
       {
         name: 'Home',
-        link: '/'
+        link: '/',
+        anchor: 'top',
       },
-      {
-        name: 'About',
-        link: '/'
-      },
-      {
-        name: 'Projects',
-        link: '/'
-      },
+      // {
+      //   name: 'About',
+      //   link: '/',
+      //   anchor: '#about'
+      // },
+      // {
+      //   name: 'Projects',
+      //   link: '/',
+      //   anchor: '#projects'
+      // },
       {
         name: 'Blog',
-        link: '/blog'
+        link: '/blog',
+        anchor: 'top'
       },
-      {
-        name: 'Contact Me',
-        link: '/'
-      }
+      // {
+      //   name: 'Contact Me',
+      //   link: '/',
+      //   anchor: '#contact'
+      // }
     ]
   },
   /* Plugins */
