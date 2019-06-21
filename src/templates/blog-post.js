@@ -8,11 +8,11 @@ import tw from 'tailwind.macro'
 
 import heroStyles from './blog-post.module.css'
 
-const Footer = styled.footer`
+export const Footer = styled.footer`
   ${tw`text-center text-grey absolute bottom-0 p-6 font-sans text-md lg:text-lg`};
   margin: "0 auto";
 `
-const BigTitle = styled.h1`
+export const BigTitle = styled.h1`
   ${tw`text-white mt-3 text-center`};
   font-size: 5rem;
   /* white-space: nowrap; */
@@ -22,7 +22,7 @@ const BigTitle = styled.h1`
   padding-bottom: 2rem;
 
 `
-const Par = styled.p`
+export const Par = styled.p`
   ${tw`text-white size-6xl text-center`};
   margin: "0 auto";
   max-width: 960;
@@ -30,7 +30,7 @@ const Par = styled.p`
   font-size: 1.5rem;
 `;
 
-const StyledDiv = styled.div`
+export const StyledDiv = styled.div`
   ${tw`text-white`};
   margin: '0 auto';
   max-width: 960;
@@ -41,7 +41,7 @@ const StyledDiv = styled.div`
   padding-left: 15px;
 `;
 
-const StyledBackgroundImage = styled(BackgroundImage)`
+export const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -56,7 +56,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <BlogLayout>
           <StyledBackgroundImage 
-            alt={post.title} 
+            alt={post.heroImage.description} 
             fluid={post.heroImage.fluid}
           />
 
@@ -86,7 +86,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 
-const pageQuery = graphql`
+export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
@@ -97,6 +97,7 @@ const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
+        description
         fluid(maxWidth: 2048, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }

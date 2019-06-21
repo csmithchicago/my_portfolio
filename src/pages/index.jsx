@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled, { css } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
 import Img from 'gatsby-image'
 import get from 'lodash/get'
 
 // Animations
-import { rotateAnimation } from '../styles/animations'
+// import { rotateAnimation } from '../styles/animations'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 // Components
 import Layout from '../components/Layout'
@@ -23,10 +25,23 @@ import Hero from '../views/Hero'
 import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
+import triangle from '../images/triangle.svg'
 
 import contentfulLogo from '../images/PoweredByContentful_DarkBackground.svg'
 import gatsbyLogo from '../images/gatsbyjs-ar21.svg'
 import styles from '../styles/style.css'
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`
+export const rotateAnimation = length => css`
+  animation: ${rotate} ${length} linear infinite;
+`
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -41,12 +56,15 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
-export const Span = styled.span`
+const Span = styled.span`
   &:before {
     content: '';
+    background: url(${triangle});
+    position: absolute;
     ${rotateAnimation('4s')};
   }
 `
+
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `
@@ -84,7 +102,7 @@ class HomePage extends React.Component {
           Hi, <br /> I'm Corey Smith.
         </BigTitle>
         <Subtitle>
-          Medical Physicist <span style={{color: "#e07628"}}>  &#10031;  </span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
+          Medical Physicist <Span style={{color: "#e07628"}}> &#10031; </Span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
         </Subtitle>
       </Hero>
       <About offset={1}>
@@ -120,8 +138,14 @@ class HomePage extends React.Component {
         <Inner>
           <Title>Get in touch</Title>
           <ContactText> 
-          <Link to="#">Blog is Coming Soon!</Link>
-          <br></br>
+          <Link to="/blog">Blog is Coming Soon!</Link>
+          <br/><br/>
+          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
+          <FontAwesomeIcon icon={faGithub} color="white"/>
+          </a>
+          {'             '}
+          {/* <FontAwesomeIcon icon={faTwitter} color="white"/> */}
+
           </ContactText>
         </Inner>
         <Footer>
@@ -131,12 +155,12 @@ class HomePage extends React.Component {
             style={{width: "40%"}}
             alt="Powered by Contentful"/>
           </a>
-          {'      '}
+          {/* {'      '}
           <a href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">
             <img src={gatsbyLogo}
             style={{width: "20%"}}
             alt="Powered by GatsbyJS"/>
-          </a>
+          </a> */}
           </p>
           &copy; 2019 by Corey Smith.{' '}
         </Footer>
