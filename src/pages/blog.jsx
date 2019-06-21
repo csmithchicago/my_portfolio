@@ -38,26 +38,18 @@ const BlogPage = () => (
           }
         }    
       }
-      contentfulBlogPost(id: {eq: "1644bef8-2528-50db-8d5e-c6952209f942"}) {
-        title
-        heroImage{
-          fluid(maxWidth: 2048, background: "rgb:000000") {
-            ...GatsbyContentfulFluid_tracedSVG
-          }
-        }
-        publishDate(formatString: "MMMM Do, YYYY")
-        body{
-          childMarkdownRemark{
-            html
-          }
+      contentfulAsset(id: {eq: "a6d93e70-fdad-55fa-bceb-33fba383ff3a"}){
+        description
+        fluid(maxWidth: 2048, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }`}
     render={ data => (
       <BlogLayout>
       <StyledBackgroundImage 
-        alt={data.contentfulBlogPost.heroImage.description} 
-        fluid={data.contentfulBlogPost.heroImage.fluid}
+        alt={data.contentfulAsset.description} 
+        fluid={data.contentfulAsset.fluid}
       />
 
     <StyledDiv>

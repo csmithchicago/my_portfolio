@@ -9,7 +9,7 @@ import get from 'lodash/get'
 // Animations
 // import { rotateAnimation } from '../styles/animations'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faTwitter, faMediumM } from '@fortawesome/free-brands-svg-icons'
 
 // Components
 import Layout from '../components/Layout'
@@ -143,9 +143,14 @@ class HomePage extends React.Component {
           <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
           <FontAwesomeIcon icon={faGithub} color="white"/>
           </a>
-          {'             '}
-          {/* <FontAwesomeIcon icon={faTwitter} color="white"/> */}
-
+          <br/><br/>
+          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
+          <FontAwesomeIcon icon={faTwitter} color="white"/>
+          </a>
+          <br/><br/>
+          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
+          <FontAwesomeIcon icon={faMediumM} color="white"/>
+          </a>
           </ContactText>
         </Inner>
         <Footer>
