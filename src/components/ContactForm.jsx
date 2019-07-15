@@ -127,7 +127,7 @@ export default class ContactForm extends React.Component {
           </div>
           <div className="flex w-1/2 object-contain" >
             <Title>Contact Me</Title>
-            <form
+            {/* <form
             name="contact"
             method="post"
             action="/thank_you/"
@@ -135,14 +135,14 @@ export default class ContactForm extends React.Component {
             data-netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
             >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              The `form-name` hidden field is required to support form submissions without JavaScript
               <input type="hidden" name="form-name" value="contact" />
-              <div hidden className="flex-1">
+              <p hidden className="flex-1">
                   <label>
                       Don’t fill this out:{" "}
                       <input name="bot-field" onChange={this.handleChange} />
                   </label>
-              </div>
+              </p>
 
               <label>
                   <Input defaultValue="Name" type="text" name="name" onChange={this.handleChange}/>
@@ -159,7 +159,7 @@ export default class ContactForm extends React.Component {
                   <Button type="submit">Send</Button>
               </label>
             </form>
-          </div>
+          </div> */}
       </div>
     </div>
     );
