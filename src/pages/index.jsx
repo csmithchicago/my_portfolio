@@ -8,8 +8,6 @@ import get from 'lodash/get'
 
 // Animations
 // import { rotateAnimation } from '../styles/animations'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter, faMediumM } from '@fortawesome/free-brands-svg-icons'
 
 // Components
 import Layout from '../components/Layout'
@@ -26,6 +24,7 @@ import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
 import triangle from '../images/triangle.svg'
+import ContactForm from "../components/ContactForm"
 
 import contentfulLogo from '../images/PoweredByContentful_DarkBackground.svg'
 import gatsbyLogo from '../images/gatsbyjs-ar21.svg'
@@ -42,6 +41,17 @@ const rotate = keyframes`
 export const rotateAnimation = length => css`
   animation: ${rotate} ${length} linear infinite;
 `
+
+export const StyledLink = styled(Link)`
+    ${tw`text-white text-center text-4xl`};
+    text-decoration: none;
+    font-family: 'Cormorant Garamond';
+    font-weight: 700;
+    &:hover {
+        ${tw`underline`};
+        text-decoration-color: #e07628;
+    };
+`;
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -80,7 +90,7 @@ const AboutSub = styled.div`
 `
 
 const ContactText = styled.p`
-  ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl`};
+  ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl text-center`};
 `
 
 const Footer = styled.footer`
@@ -96,7 +106,7 @@ class HomePage extends React.Component {
     return (
     <>
     <Layout />
-    <Parallax pages={4}>
+    <Parallax pages={5}>
       <Hero offset={0}>
         <BigTitle>
           Hi, <br /> I'm Corey Smith.
@@ -133,41 +143,27 @@ class HomePage extends React.Component {
             This is an ongoing project I created to help people keep track of their weight loss progress.
           </ProjectCard>
         </ProjectsWrapper>
+        <br/><br/><br/>
+        <StyledLink to="/blog" style={{ margin: '0 auto', textAlign: "center" }}> Check Out My Blog For More</StyledLink>
       </Projects>
-      <Contact offset={3}>
-        <Inner>
-          <Title>Get in touch</Title>
-          <ContactText> 
-          <Link to="/blog">Blog is Coming Soon!</Link>
-          <br/><br/>
-          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
-          <FontAwesomeIcon icon={faGithub} color="white"/>
-          </a>
-          <br/><br/>
-          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
-          <FontAwesomeIcon icon={faTwitter} color="white"/>
-          </a>
-          <br/><br/>
-          <a href="https://github.com/csmithchicago" rel="nofollow" target="_blank">
-          <FontAwesomeIcon icon={faMediumM} color="white"/>
-          </a>
-          </ContactText>
+      <About offset={3}>
+      <Inner>
+          <Title>Get in Touch</Title>
+          <ContactForm/>
         </Inner>
+      </About>
+      <Contact offset={4}>
+
         <Footer>
         <p>
-          <a href="https://www.contentful.com/" rel="nofollow" target="_blank">
+          <a href="https://www.contentful.com/" rel="nofollow noreferrer" target="_blank">
             <img src={contentfulLogo}
             style={{width: "40%"}}
             alt="Powered by Contentful"/>
           </a>
-          {/* {'      '}
-          <a href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">
-            <img src={gatsbyLogo}
-            style={{width: "20%"}}
-            alt="Powered by GatsbyJS"/>
-          </a> */}
-          </p>
+          <br/>
           &copy; 2019 by Corey Smith.{' '}
+        </p>
         </Footer>
       </Contact>
     </Parallax>
