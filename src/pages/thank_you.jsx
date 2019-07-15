@@ -12,18 +12,18 @@ import {Footer, BigTitle, Par, StyledDiv, StyledBackgroundImage} from '../templa
 
 
 export default () => (
-    <p>Thanks For Stopping By!</p>
+    // <p>Thanks For Stopping By!</p>
 
-//     <BlogLayout>
-//   <StyledDiv>
-//     <h1 style={{borderBottom: "1px solid", textAlign: "center",
-//                 fontFamily: 'Cormorant Garamond', fontWeight: "700"
-//                 }}
-//     >
-//       Recent Posts
-//     </h1>
-//     </StyledDiv>
-//     </BlogLayout>
+    <BlogLayout>
+  <StyledDiv>
+    <h3 style={{textAlign: "center",
+                fontFamily: 'Cormorant Garamond', fontWeight: "700"
+                }}
+    >
+      Thank you for reaching out to me. I will try and get back to you within 24 hours.
+    </h3>
+    </StyledDiv>
+    </BlogLayout>
 );
 
 
