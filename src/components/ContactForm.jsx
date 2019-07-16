@@ -158,12 +158,10 @@ export default class ContactForm extends React.Component {
               <label>
                   <Button type="submit">Send</Button>
               </label>
-            </form>
-          </div> */}
+            </form>*/}
+          </div>
       </div>
     </div>
     );
   };
 }
-
-// style={{ minWidth:"100%", maxWidth:"100%", width: "100%" }}
