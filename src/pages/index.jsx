@@ -137,7 +137,7 @@ class HomePage extends React.Component {
           </ProjectCard>
           <ProjectCard
             title="My Weight Loss Tracker"
-            link="https://github.com/csmithchicago/weightlosstracker"
+            link="https://www.myweightlosstracker.com/"
             bg="#794acf"
           >
             This is an ongoing project I created to help people keep track of their weight loss progress.
