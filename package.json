@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^7.0.0",
+    "figma": "0.0.1",
     "fs": "0.0.1-security",
     "gatsby": "^2.13.23",
     "gatsby-background-image": "^0.7.2",
