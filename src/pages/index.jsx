@@ -13,7 +13,7 @@ import get from 'lodash/get'
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
 import PublicationCard from '../components/PublicationCard'
-
+import Footer from '../components/Footer'
 // Elements
 import Inner from '../elements/Inner'
 import { Title, BigTitle, Subtitle } from '../elements/Titles'
@@ -93,10 +93,6 @@ const ContactText = styled.p`
   ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl text-center`};
 `
 
-const Footer = styled.footer`
-  ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
-`
-
 // const Index = ({data}) => (
 class HomePage extends React.Component {
   render() {
@@ -106,7 +102,7 @@ class HomePage extends React.Component {
     return (
     <>
     <Layout />
-    <Parallax pages={5}>
+    <Parallax pages={1}>
       <Hero offset={0}>
         <BigTitle>
           Hi, <br /> I'm Corey Smith.
@@ -121,52 +117,22 @@ class HomePage extends React.Component {
           <Avatar fluid={author.node.heroImage.fluid} alt="profile picture"/>
           <AboutSub dangerouslySetInnerHTML={{
             __html: bio.childMarkdownRemark.html }}>
-            {/* {author.node.shortBio.shortBio}   */}
           </AboutSub>
         </AboutHero>
       </About>
-      <Projects offset={2}>
-        <Title name="#projects" >Projects</Title>
-        <ProjectsWrapper>
-        <ProjectCard
-            title="r/Loseit Challenge Analysis"
-            link="https://github.com/csmithchicago/Loseit"
-            bg="#794acf"
-          >
-            Analysis of Past Reddit Weight Loss Challenges
-          </ProjectCard>
-          <ProjectCard
-            title="My Weight Loss Tracker"
-            link="https://www.myweightlosstracker.com/"
-            bg="#794acf"
-          >
-            This is an ongoing project I created to help people keep track of their weight loss progress.
-          </ProjectCard>
-        </ProjectsWrapper>
-        <br/><br/><br/>
-        <StyledLink to="/blog" style={{ margin: '0 auto', textAlign: "center" }}> Check Out My Blog For More</StyledLink>
-      </Projects>
-      <About offset={3}>
-      <Inner>
-          <Title>Get in Touch</Title>
-          <ContactForm/>
-        </Inner>
-      </About>
-      <Contact offset={4}>
-
-        <Footer>
-        <p>
-          <a href="https://www.contentful.com/" rel="nofollow noreferrer" target="_blank">
-            <img src={contentfulLogo}
-            style={{width: "40%"}}
-            alt="Powered by Contentful"/>
-          </a>
-          <br/>
-          &copy; 2019 by Corey Smith.{' '}
-        </p>
-        </Footer>
-      </Contact>
     </Parallax>
+
+    <Footer>
+      <p>
+        <a href="https://www.contentful.com/" rel="nofollow noreferrer" target="_blank">
+          <img src={contentfulLogo}
+          style={{width: "40%"}}
+          alt="Powered by Contentful"/>
+        </a>
+        <br/>
+        &copy; 2019 by Corey Smith.{' '}
+      </p>
+    </Footer>
   </>
     )
   }

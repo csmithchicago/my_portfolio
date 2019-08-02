@@ -8,7 +8,7 @@ import tw from 'tailwind.macro'
 
 import heroStyles from './blog-post.module.css'
 
-export const Footer = styled.footer`
+const Footer = styled.footer`
   ${tw`text-center text-grey absolute bottom-0 p-6 font-sans text-md lg:text-lg`};
   margin: "0 auto";
 `
@@ -55,8 +55,8 @@ class BlogPostTemplate extends React.Component {
     const post = get(this.props, 'data.contentfulBlogPost')
     return (
       <BlogLayout>
-          <StyledBackgroundImage 
-            alt={post.heroImage.description} 
+          <StyledBackgroundImage
+            alt={post.heroImage.description}
             fluid={post.heroImage.fluid}
           />
 
@@ -78,7 +78,7 @@ class BlogPostTemplate extends React.Component {
         />
       <Footer>
         &copy; 2019 by Corey Smith.{' '}
-      </Footer>      
+      </Footer>
       </BlogLayout>
     )
   }

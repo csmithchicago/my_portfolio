@@ -7,7 +7,12 @@ import tw from 'tailwind.macro'
 
 // Components
 import BlogLayout from '../components/BlogLayout'
-import {Footer, BigTitle, Par, StyledDiv, StyledBackgroundImage} from '../templates/blog-post'
+import {BigTitle, Par, StyledDiv, StyledBackgroundImage} from '../templates/blog-post'
+
+const Footer = styled.footer`
+  ${tw`text-center text-grey absolute bottom-0 p-6 font-sans text-md lg:text-lg`};
+  margin: "0 auto";
+`
 
 export const StyledLink = styled(Link)`
     ${tw`text-white text-center`};
@@ -36,7 +41,7 @@ const BlogPage = () => (
               }
             }
           }
-        }    
+        }
       }
       contentfulAsset(id: {eq: "a6d93e70-fdad-55fa-bceb-33fba383ff3a"}){
         description
@@ -47,8 +52,8 @@ const BlogPage = () => (
     }`}
     render={ data => (
       <BlogLayout>
-      <StyledBackgroundImage 
-        alt={data.contentfulAsset.description} 
+      <StyledBackgroundImage
+        alt={data.contentfulAsset.description}
         fluid={data.contentfulAsset.fluid}
       />
 
@@ -56,8 +61,8 @@ const BlogPage = () => (
       <h1 style={{borderBottom: "1px solid", textAlign: "center",
                   fontFamily: 'Cormorant Garamond', fontWeight: "700"
                   }}
-      > 
-        Recent Posts 
+      >
+        Recent Posts
       </h1>
         {data.allContentfulBlogPost.edges.map(({ node }) => (
           <div key={node.id}>
@@ -80,7 +85,7 @@ const BlogPage = () => (
 
     <Footer>
       &copy; 2019 by Corey Smith.{' '}
-    </Footer>      
+    </Footer>
     </BlogLayout>
     )}
   />
