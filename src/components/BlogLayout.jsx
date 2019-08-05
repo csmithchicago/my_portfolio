@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigation from './Navigation'
 import Layout from './Layout'
 
 class BlogLayout extends React.Component {
@@ -8,14 +7,7 @@ class BlogLayout extends React.Component {
     return (
     <>
     <Layout />
-      <Navigation />
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          textSize: "1em"
-        }}
-      >
+      <div>
         {children}
       </div>
     </>

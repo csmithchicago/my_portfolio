@@ -6,7 +6,7 @@ import blackstar from '../images/Star.svg'
 import styles from '../styles/style.css'
 
 export const Title = styled.h1`
-  ${tw`text-5xl lg:text-5xl text-white mb-8 tracking-wide relative inline-block`};
+  ${tw`text-5xl lg:text-5xl mb-8 tracking-wide relative inline-block`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   &:before {
     content: '';
@@ -25,14 +25,14 @@ export const Title = styled.h1`
 `
 
 export const BigTitle = styled.h1`
-  ${tw`text-white mb-6 tracking-wide`};
+  ${tw`mb-6 tracking-wide`};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
   font-size: 9vw;
   white-space: nowrap;
 `
 
 export const Subtitle = styled.p`
-  ${tw`text-white mt-8 xxl:w-3/4`};
+  ${tw`mt-8 xxl:w-3/4`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   font-size: 3vw;

@@ -10,12 +10,12 @@ import BlogLayout from '../components/BlogLayout'
 import {BigTitle, Par, StyledDiv, StyledBackgroundImage} from '../templates/blog-post'
 
 const Footer = styled.footer`
-  ${tw`text-center text-grey absolute bottom-0 p-6 font-sans text-md lg:text-lg`};
+  ${tw`text-center absolute bottom-0 p-6 font-sans text-md lg:text-lg`};
   margin: "0 auto";
 `
 
 export const StyledLink = styled(Link)`
-    ${tw`text-white text-center`};
+    ${tw`text-center`};
     text-decoration: none;
     &:hover {
         ${tw`underline`};
@@ -65,7 +65,7 @@ const BlogPage = () => (
         Recent Posts
       </h1>
         {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <div key={node.id}>
+          <StyledDiv key={node.id}>
             <StyledLink to={`/blog/${node.slug}/`}>
               <h3 style={{ fontFamily: 'Cormorant SC', fontWeight: "700"}}>
                 {node.title}{" "}
@@ -78,8 +78,8 @@ const BlogPage = () => (
                 </span>
               </h3>
             </StyledLink>
-            <p>{node.childContentfulBlogPostDescriptionTextNode.childMarkdownRemark.excerpt}</p>
-          </div>
+            <Par>{node.childContentfulBlogPostDescriptionTextNode.childMarkdownRemark.excerpt}</Par>
+          </StyledDiv>
         ))}
     </StyledDiv>
 

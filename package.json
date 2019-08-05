@@ -20,7 +20,7 @@
     "gatsby-cli": "^2.7.26",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-manifest": "^2.0.26",
+    "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-purgecss": "^3.1.1",

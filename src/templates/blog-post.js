@@ -13,7 +13,7 @@ const Footer = styled.footer`
   margin: "0 auto";
 `
 export const BigTitle = styled.h1`
-  ${tw`text-white mt-3 text-center`};
+  ${tw`mt-3 text-center`};
   font-size: 5rem;
   /* white-space: nowrap; */
   text-align: center;
@@ -23,7 +23,7 @@ export const BigTitle = styled.h1`
 
 `
 export const Par = styled.p`
-  ${tw`text-white size-6xl text-center`};
+  ${tw`size-6xl text-center`};
   margin: "0 auto";
   max-width: 960;
   /* padding-top: 1em; */
@@ -31,7 +31,6 @@ export const Par = styled.p`
 `;
 
 export const StyledDiv = styled.div`
-  ${tw`text-white`};
   margin: '0 auto';
   max-width: 960;
   padding-top: 0;

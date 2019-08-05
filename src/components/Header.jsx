@@ -2,7 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import styled  from 'styled-components'
 import tw from 'tailwind.macro'
-const scrollToElement = require('scroll-to-element')
+import logoBtn from '../images/logo_btn.svg'
+import projectsBtn from '../images/projects_btn.svg'
+import blogBtn from '../images/blog_btn.svg'
 
 export const StyledLink = styled(Link)`
     ${tw`text-white text-center`};
@@ -20,14 +22,14 @@ const List = styled.li`
 
 const Title = styled.h1`
     ${tw`text-white text-left sm:text-4xl`};
-    margin: 0; 
-    flex: 1; 
+    margin: 0;
+    flex: 1;
 `;
 
-const Header = ({ menuLinks }) => (
+const Header = () => (
   <header
     style={{
-      background: "rebeccapurple",
+      height: "100px",
       marginBottom: 0,
       verticalAlign: "text-bottom"
     }} >
@@ -44,77 +46,26 @@ const Header = ({ menuLinks }) => (
     >
       <Title>
         <StyledLink to="/">
-          {" Corey Deon"}
+        <img src={logoBtn} style={{paddingBottom: "25px",
+             width: "140px"}} alt="site logo"/>
         </StyledLink>
       </Title>
         <nav style={{ verticalAlign: "text-bottom" }}>
-          <ul style={{ display: "flex", flex: 1, 
+          <ul style={{ display: "flex", flex: 1,
               verticalAlign: "text-bottom"}}>
-            {menuLinks.map(link => (
-              <List key={link.name} >
-                <StyledLink to={link.link} >
-                  {link.name}
+              <List key={"projects"} >
+                <StyledLink to="/projects">
+                <img src={projectsBtn} style={{width: "110px"}} alt="site logo"/>
                 </StyledLink>
               </List>
-            ))}
+              <List key={"blog"} >
+                <StyledLink to="/blog">
+                <img src={blogBtn} style={{width: "110px"}} alt="site logo"/>
+                </StyledLink>
+              </List>
           </ul>
         </nav>
     </div>
   </header>
 );
 export default Header
-
-
-
-export const Header2 = ({ menuLinks }) => (
-<div>
-    {
-      menuLinks.map(link => (
-        <List key={link.name} >
-          <StyledLink 
-            to={link.link}
-            onClick={event => handleLinkClick(event, link.anchor)}
-          >
-            {link.name}
-          </StyledLink>
-        </List>
-      ))
-    }
-    </div>
-)
-
-function handleLinkClick(event, target){
-  if (typeof window !== undefined) {
-    event.preventDefault()
-    scrollToElement(target, {offset: -95, duration: 1000})
-  }
-}
-
-
-// // this helpful functionality came from
-// //https://chaseohlson.com/gatsby-link-anchor-navigation
-// export class Header2 extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {}
-//   }
-
-//   render() {
-//     return (
-//     <div>
-//     {
-//       menuLinks.map(link => (
-//         <List key={link.name} >
-//           <StyledLink 
-//             to={link.link}
-//             onClick={event => handleLinkClick(event, link.anchor)}
-//           >
-//             {link.name}
-//           </StyledLink>
-//         </List>
-//       ))
-//     }
-//     </div>
-//     )
-//   }
-// }

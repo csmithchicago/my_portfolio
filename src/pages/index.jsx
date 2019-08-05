@@ -74,6 +74,9 @@ const Span = styled.span`
     ${rotateAnimation('4s')};
   }
 `
+const Wrapper = styled.div`
+  ${tw`w-full xl:w-2/3 text-center`};
+ `
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
@@ -84,7 +87,7 @@ const Avatar = styled(Img)`
 `
 
 const AboutSub = styled.div`
-  ${tw`flex-auto text-white pt-16 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
+  ${tw`flex-auto pt-16 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
   font-family: 'Cormorant Garamond';
   font-weight: 600;
 `
@@ -102,16 +105,15 @@ class HomePage extends React.Component {
     return (
     <>
     <Layout />
-    <Parallax pages={1}>
-      <Hero offset={0}>
+      <Wrapper>
         <BigTitle>
           Hi, <br /> I'm Corey Smith.
         </BigTitle>
         <Subtitle>
           Medical Physicist <Span style={{color: "#e07628"}}> &#10031; </Span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
         </Subtitle>
-      </Hero>
-      <About offset={1}>
+      </Wrapper>
+      <Inner>
         <Title>About</Title>
         <AboutHero>
           <Avatar fluid={author.node.heroImage.fluid} alt="profile picture"/>
@@ -119,19 +121,19 @@ class HomePage extends React.Component {
             __html: bio.childMarkdownRemark.html }}>
           </AboutSub>
         </AboutHero>
-      </About>
-    </Parallax>
+      </Inner>
+
 
     <Footer>
-      <p>
+
         <a href="https://www.contentful.com/" rel="nofollow noreferrer" target="_blank">
           <img src={contentfulLogo}
-          style={{width: "40%"}}
+          style={{width: "20%"}}
           alt="Powered by Contentful"/>
         </a>
-        <br/>
+        <br/><br/>
         &copy; 2019 by Corey Smith.{' '}
-      </p>
+
     </Footer>
   </>
     )

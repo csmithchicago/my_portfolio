@@ -15,14 +15,14 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
   html, body {
-    width: 100%;
+    margin: '0 auto';
+    max-width: 960;
+    /* width: 100%; */
     height: 100%;
-    margin: 0;
     padding: 0;
-    overflow-y: scroll;
-    font-family: Cormorant SC;
+    font-family: Cormorant Garamond;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
   }
   a {
     color: #e07628;

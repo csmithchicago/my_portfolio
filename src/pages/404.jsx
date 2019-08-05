@@ -20,7 +20,7 @@ export default () => (
                 fontFamily: 'Cormorant Garamond', fontWeight: "700"
                 }}
     >
-      Thank you for reaching out to me. I will try and get back to you within 24 hours.
+      This Page Does Not Exist
     </h3>
     </StyledDiv>
     </BlogLayout>
