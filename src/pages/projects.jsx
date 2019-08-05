@@ -22,7 +22,7 @@ const ProjectsPage = () => (
   <StaticQuery
     query={graphql`
     query{
-      contentfulAsset(id: {eq: "a6d93e70-fdad-55fa-bceb-33fba383ff3a"}){
+      contentfulAsset(id: {eq: "a247dc5f-8caf-5337-89ff-3559f87f1889"}){
         description
         fluid(maxWidth: 2048, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
