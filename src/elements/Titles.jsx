@@ -31,8 +31,8 @@ export const BigTitle = styled.h1`
   white-space: nowrap;
 `
 
-export const Subtitle = styled.p`
-  ${tw`mt-8 xxl:w-3/4`};
+export const SubTitle = styled.p`
+  ${tw`text-center`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   font-size: 3vw;

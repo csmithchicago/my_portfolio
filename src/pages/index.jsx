@@ -15,8 +15,7 @@ import ProjectCard from '../components/ProjectCard'
 import PublicationCard from '../components/PublicationCard'
 import Footer from '../components/Footer'
 // Elements
-import Inner from '../elements/Inner'
-import { Title, BigTitle, Subtitle } from '../elements/Titles'
+import { Title, BigTitle, SubTitle } from '../elements/Titles'
 
 // Views
 import Hero from '../views/Hero'
@@ -67,6 +66,7 @@ const ProjectsWrapper = styled.div`
   }
 `
 const Span = styled.span`
+  ${tw `text-center`};
   &:before {
     content: '';
     background: url(${triangle});
@@ -75,7 +75,7 @@ const Span = styled.span`
   }
 `
 const Wrapper = styled.div`
-  ${tw`w-full xl:w-2/3 text-center`};
+  ${tw`text-center`};
  `
 
 const AboutHero = styled.div`
@@ -103,17 +103,19 @@ class HomePage extends React.Component {
     const bio = author.node.shortBio
 
     return (
-    <>
+    <div className="main-container">
     <Layout />
+
       <Wrapper>
         <BigTitle>
           Hi, <br /> I'm Corey Smith.
         </BigTitle>
-        <Subtitle>
+        <SubTitle>
           Medical Physicist <Span style={{color: "#e07628"}}> &#10031; </Span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
-        </Subtitle>
+        </SubTitle>
       </Wrapper>
-      <Inner>
+
+      <Wrapper>
         <Title>About</Title>
         <AboutHero>
           <Avatar fluid={author.node.heroImage.fluid} alt="profile picture"/>
@@ -121,11 +123,11 @@ class HomePage extends React.Component {
             __html: bio.childMarkdownRemark.html }}>
           </AboutSub>
         </AboutHero>
-      </Inner>
+      </Wrapper>
 
 
-    <Footer>
-
+    <Footer className="footer-gradient" >
+      <div>
         <a href="https://www.contentful.com/" rel="nofollow noreferrer" target="_blank">
           <img src={contentfulLogo}
           style={{width: "20%"}}
@@ -133,9 +135,9 @@ class HomePage extends React.Component {
         </a>
         <br/><br/>
         &copy; 2019 by Corey Smith.{' '}
-
+        </div>
     </Footer>
-  </>
+  </div>
     )
   }
 }

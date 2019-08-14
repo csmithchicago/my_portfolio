@@ -5,10 +5,13 @@ import tw from 'tailwind.macro'
 
 const Footer = styled.footer`
   /* height: 450px; */
+  /* width: 100%; */
   text-align: center;
-  background-color: linear-gradient(to bottom, #F8F7FF 7.81%, black 79.17%);
   padding-top: 50px;
   padding-bottom: 20px;
+  margin: 0;
+  /* vertical-align: bottom;
+  display: table-cell; */
 `
 
 export default Footer;
