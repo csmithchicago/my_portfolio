@@ -112,7 +112,7 @@ class HomePage extends React.Component {
           Hi, <br /> I'm Corey Smith.
         </BigTitle>
         <Subtitle>
-          Medical Physicist <Span style={{color: "#e07628"}}> &#10031; </Span> Data Scientist <span style={{color: "#e07628"}}>  &#10031;  </span> PhD Candidate
+        Data Scientist <Span style={{color: "#e07628"}}> &#10031; </Span> Machine Learning Engineer
         </Subtitle>
       </Hero>
       <About offset={1}>
