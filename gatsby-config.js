@@ -51,7 +51,7 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
-        host: `preview.contentful.com`,
+        // host: `preview.contentful.com`,
       },
     },
     `gatsby-plugin-sitemap`,
